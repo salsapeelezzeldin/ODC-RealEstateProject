@@ -1,0 +1,26 @@
+- urls
+-->id, url, method, query[], params: [], roles: [{roleName}]
+
+- roles
+-->id, role, status
+
+- users
+-->id, roleid, fName, lName, email, password, National ID,  dOfBirth,  age, status, addresses: [], image, gender,phoneNum, customerUnits[unitid, paymentType, Payment details]
+
+- projectTypes
+-->id, type, details
+
+- projects
+-->id, name, typeid, owner, startingDate, endingDate, city, location, projectSpace, details, images[], Features
+
+- buildings
+-->id, projectid, number, area, buildingSpace, floors, units[]
+
+- units
+-->id, building, unitname, unitSpace,  price, Delivery Date, status, payments[]
+
+- Payments
+-->id, type, Payment details,
+
+- receipts
+-->id, time, price, status
