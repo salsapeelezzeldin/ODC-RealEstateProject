@@ -3,12 +3,12 @@ const Project= require('../app/controller/project.contoller')
 const Auth = require("../app/middleware/auth.middleware")
 
 //all Projects
-router.get("/", Auth.authentication, Project.allProjects)
+router.get("/", Project.allProjects)
 
 //add Project
 router.post("/addProject", Auth.authentication, Project.addProject)
 //single Project
-router.get("/singleProject/:id", Auth.authentication, Project.singleProject)
+router.get("/singleProject/:id", Project.singleProject)
 //edit Project
 router.post("/editProject/:id", Auth.authentication, Project.editProject)
 //delete Project
