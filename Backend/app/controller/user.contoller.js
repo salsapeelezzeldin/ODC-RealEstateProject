@@ -7,7 +7,7 @@ class User{
             if(req.body.password.length<6) throw new Error("password must be more than 6")
             const userData = new userModel(req.body)
             await userData.save()
-            myHelper.resHandler(res, 200, true, userData, "user added successfully")
+            myHelper.resHandler(res, 200, true, userData, "user registered successfully")
         }
         catch(e){
             myHelper.resHandler(res, 500, false, e, e.message)
@@ -45,7 +45,7 @@ class User{
     }
     static profile = (req,res)=>{        
         try{
-            myHelper.resHandler(res, 200, true,{user: req.user},"user profile fetched successfully")
+            myHelper.resHandler(res, 200, true, req.user,"user profile fetched successfully")
         }
         catch(e){
             myHelper.resHandler(res, 500, false, e, e.message)

@@ -1,0 +1,46 @@
+
+(generate new module)
+right click on src folder
+Open in ... Terminal
+ng g module Auth 
+
+
+(generate new componet)
+right click on app folder inside src
+Open in ... Terminal
+ng generate component navbar 
+ng g c navBar  (nav-bar)
+
+
+home ==> header
+        index
+        navbar 
+        slider
+        services
+        contact
+        footer
+
+src => app => interfaces => *login
+src => app => interceptor => *auth
+
+
+components
+----------------------
+src => app => shared => *header, *navbar, *footer
+src => app => pages => 
+		    *index
+		    *register
+		    *login
+		     roles *[ all, add, edit, delete, single]
+		     urls *[ all, add, edit, delete, single]
+		     url-roles *[ all, add, delete]
+		     users *[ all, add, edit, delete, single, profile, editprofile, deleteprofile, add-address, delete-address, show-address, show-addresses]
+
+		     project-type *[ all, add, edit, delete, single]
+		     projects *[ all, add, edit, delete, single]
+		     buildings *[ all, add, edit, delete, single]
+		     units *[ all, edit, single, all-building-units, all-project-units]
+		     user-units *[ all, add, edit, single]
+		     user-payments *[ all, edit, single]
+
+

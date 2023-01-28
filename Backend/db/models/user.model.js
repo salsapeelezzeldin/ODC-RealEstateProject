@@ -148,9 +148,9 @@ userSchema.pre("save", async function(){
 })
 userSchema.statics.loginUser = async(email, password) => {
     const userData = await User.findOne({email})
-    if(!userData) throw new Error("invalid email")
+    if(!userData) throw new Error("invalid email or password")
     const validatePassword = await bcryptjs.compare(password, userData.password)
-    if(!validatePassword) throw new Error("invalid password")
+    if(!validatePassword) throw new Error("invalid email or password")
     return userData
 }
 userSchema.methods.toJSON = function(){

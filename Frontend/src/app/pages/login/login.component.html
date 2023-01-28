@@ -1,0 +1,33 @@
+<form #loginForm="ngForm" novalidate (ngSubmit)="handleSubmit(loginForm)" class="form-signin w-100 m-auto text-center">
+  <div class="col-12 alert alert-danger" *ngIf="errorFlag">
+    {{errorMsg}}
+  </div>
+  <div class="form-floating">
+    <input type="email" class="form-control" id="floatingInput" placeholder="email"  required
+    name="email" #email="ngModel" [(ngModel)]="model.email" email>
+    <label for="floatingInput">Email address</label>
+    <div *ngIf="email.touched && email.invalid">
+      <div class="alert text-danger" *ngIf="email.errors?.['required']">
+        Email is Required
+      </div>
+      <div class="alert text-danger" *ngIf="email.invalid && !email.errors?.['required']">
+        Email is invalid
+      </div>
+    </div>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required
+    name="password" #password="ngModel" [(ngModel)]="model.password">
+    <label for="floatingPassword">Password</label>
+    <div class="alert text-danger" *ngIf="password.touched && password.errors?.['required']">
+      Password is Required
+    </div>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="w-100 btn btn-lg btn-primary" [disabled]="loginForm.invalid" type="submit">Sign in</button>
+</form>

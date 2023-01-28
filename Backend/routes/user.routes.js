@@ -13,7 +13,7 @@ router.post("/logout",Auth.authentication, User.logOut)
 router.post("/logoutall",Auth.authentication, User.logOutAll)
 
 //profile
-router.post("/me",Auth.authentication, User.profile)
+router.get("/me",Auth.authentication, User.profile)
 
 //all Users
 router.get("/",Auth.authentication, User.allUsers)
